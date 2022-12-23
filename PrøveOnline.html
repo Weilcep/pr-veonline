@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Button Click Counter</title>
+  </head>
+  <body>
+    <h1>Button Click Counter</h1>
+    <button id="button">Click me!</button>
+    <p>Total clicks: <span id="score">0</span></p>
+    <p>
+  Server URL:
+  <input type="text" id="server-url" value="https://weilcep.github.io/ProjectPIX.github.io/">
+</p>
+    <script>
+      const button = document.getElementById('button');
+      const score = document.getElementById('score');
+      const serverUrl = document.getElementById('server-url');
+      let count = 0;
+
+      // Retrieve the saved count from the server
+      fetch(serverUrl.value)
+        .then(response => response.text())
+        .then(text => {
+          count = parseInt(text);
+          score.innerHTML = count;
+        });
+
+      button.addEventListener('click', () => {
+        count += 1;
+        score.innerHTML = count;
+        // Save the updated count to the server
+        fetch(https://weilcep.github.io/ProjectPIX.github.io/ {
+          method
